@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="訂閱澳洲職場人布里斯本電子報，掌握最新活動與社群消息。" />
+    <meta name="theme-color" content="#0b1f3a" />
+    <title>電子報｜澳洲職場人布里斯本</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="assets/app.js" defer></script>
+  </head>
+  <body class="newsletter-page">
+    <a class="skip-link" href="#main">跳至主要內容</a>
+    <header class="site-header" data-header>
+      <a class="brand" href="index.html" aria-label="澳洲職場人布里斯本首頁"><img class="brand-logo" src="assets/brisbane-logo.jpeg" alt="" /><span class="brand-name">澳洲職場人<span>布里斯本</span></span></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span><span class="sr-only">開啟選單</span></button>
+      <nav id="primary-nav" class="primary-nav" aria-label="主要導覽"><a href="index.html">首頁</a><a href="events.html">近期活動</a><a href="team.html">幹部成員</a><a href="photos.html">活動照片</a><a class="active" href="newsletter.html">電子報</a></nav>
+    </header>
+    <main id="main" class="newsletter-main">
+      <section class="newsletter-section newsletter-full" aria-labelledby="newsletter-title">
+        <div class="newsletter-inner reveal">
+          <p class="eyebrow light"><span></span>掌握最新消息</p>
+          <h1 id="newsletter-title">不要錯過<br /><em>下一場相聚。</em></h1>
+          <p>活動消息、職涯分享與布里斯本社群近況，整理後直接寄給你。</p>
+          <form class="newsletter-form" data-newsletter-form novalidate>
+            <label class="sr-only" for="newsletter-email">電子郵件地址</label>
+            <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="你的電子郵件" required />
+            <button type="submit">訂閱電子報 <span aria-hidden="true">→</span></button>
+          </form>
+          <p class="form-note" data-form-note aria-live="polite">電子報訂閱功能即將開放。</p>
+          <div class="social-follow">
+            <p>也可以透過社群平台掌握最新活動</p>
+            <div><a href="https://www.facebook.com/share/19KPuEmhov/?mibextid=wwXIfr" target="_blank" rel="noreferrer"><span aria-hidden="true">f</span>前往 Facebook</a><a href="https://www.instagram.com/acf_brisbane?stkn=OWlxMHluYmlqZmZp" target="_blank" rel="noreferrer"><span aria-hidden="true">◎</span>前往 Instagram</a></div>
+          </div>
+        </div>
+        <div class="newsletter-shape" aria-hidden="true"><span>職場人</span></div>
+      </section>
+    </main>
+    <footer class="site-footer"><a class="brand footer-brand" href="index.html"><img class="brand-logo" src="assets/brisbane-logo.jpeg" alt="" /><span class="brand-name">澳洲職場人<span>布里斯本</span></span></a><p>連結布里斯本的留學生與年輕職場人。</p><div class="footer-actions"><div class="footer-socials"><a href="https://www.facebook.com/share/19KPuEmhov/?mibextid=wwXIfr" target="_blank" rel="noreferrer"><span aria-hidden="true">f</span>Facebook</a><a href="https://www.instagram.com/acf_brisbane?stkn=OWlxMHluYmlqZmZp" target="_blank" rel="noreferrer"><span aria-hidden="true">◎</span>Instagram</a></div><a class="footer-return" href="index.html">返回首頁</a></div></footer>
+  </body>
+</html>
