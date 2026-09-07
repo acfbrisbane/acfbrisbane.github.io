@@ -6,6 +6,7 @@ const formNote = document.querySelector("[data-form-note]");
 const galleryDialog = document.querySelector("[data-gallery-dialog]");
 const galleryPreview = document.querySelector("[data-gallery-preview]");
 const galleryClose = document.querySelector("[data-gallery-close]");
+const newsletterEndpoint = "https://script.google.com/macros/s/AKfycbzjcUDpyz3WwZ48votvsiATw0gVkbkaTsLQ9g623kM4ZmMn6aNquVVvnfcpwTfj4o2bnA/exec";
 
 // Keep the navigation compact after the visitor begins scrolling.
 const updateHeader = () => {
@@ -44,20 +45,52 @@ const revealObserver = new IntersectionObserver(
 
 document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
 
-// Validate the newsletter field without pretending that a subscription was saved.
+// Validate and submit newsletter subscriptions to the connected Google Sheet.
 if (newsletterForm && formNote) {
-  newsletterForm.addEventListener("submit", (event) => {
+  newsletterForm.addEventListener("submit", async (event) => {
     event.preventDefault();
     const emailField = newsletterForm.elements.email;
+    const submitButton = newsletterForm.querySelector('button[type="submit"]');
+    const email = emailField.value.trim().toLowerCase();
 
     if (!emailField.checkValidity()) {
       formNote.textContent = "請輸入有效的電子郵件地址。";
+      formNote.dataset.status = "error";
       emailField.focus();
       return;
     }
 
-    formNote.textContent = "謝謝你，電子報訂閱功能即將開放。";
-    newsletterForm.reset();
+    submitButton.disabled = true;
+    submitButton.setAttribute("aria-busy", "true");
+    formNote.textContent = "正在送出訂閱資料…";
+    formNote.dataset.status = "loading";
+
+    try {
+      const formData = new URLSearchParams({
+        email,
+        subscribedAt: new Date().toISOString(),
+        source: "acfbrisbane.github.io",
+      });
+
+      // Apps Script returns an opaque response across origins, so successful delivery
+      // is determined by the completed request rather than reading the response body.
+      await fetch(newsletterEndpoint, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData,
+      });
+
+      newsletterForm.reset();
+      formNote.textContent = "訂閱成功！謝謝你加入澳洲職場人布里斯本。";
+      formNote.dataset.status = "success";
+    } catch (error) {
+      formNote.textContent = "目前無法完成訂閱，請稍後再試。";
+      formNote.dataset.status = "error";
+      emailField.focus();
+    } finally {
+      submitButton.disabled = false;
+      submitButton.removeAttribute("aria-busy");
+    }
   });
 }
 
