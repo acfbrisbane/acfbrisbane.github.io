@@ -637,7 +637,7 @@ button, input { font: inherit; }
   .partner-card-copy strong { margin: 0.2rem 0 0.45rem; font-size: 1rem; }
   .partner-card-copy b { font-size: 0.68rem; }
   .partner-card-image { min-height: 0; }
-  .partner-card-image img { aspect-ratio: auto; object-position: center; }
+  .partner-card-image img { aspect-ratio: auto; object-fit: contain; object-position: center; }
   .event-content-layout { grid-template-columns: 1fr; }
   .event-media { width: min(13rem, 70vw); }
   .event-poster-link { width: 100%; }
