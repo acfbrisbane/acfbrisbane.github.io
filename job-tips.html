@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/styles.css" />
-    <script src="assets/app.js" defer></script>
+    <link rel="stylesheet" href="assets/styles.css?v=20260917-job-tips-filter" />
+    <script src="assets/app.js?v=20260917-job-tips-filter" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">跳至主要內容</a>
@@ -26,8 +26,15 @@
         <p>ACF 布里斯本求職攻略大揭秘</p>
       </header>
       <section class="section tips-section page-section">
-        <div class="tips-grid">
-          <article class="tip-card reveal">
+        <div class="tips-filter" role="group" aria-label="依工作類型篩選" data-tips-filter>
+          <button type="button" class="tips-filter-btn active" data-filter="all">全部</button>
+          <button type="button" class="tips-filter-btn" data-filter="fulltime">Full-time</button>
+          <button type="button" class="tips-filter-btn" data-filter="parttime">Part-time</button>
+          <button type="button" class="tips-filter-btn" data-filter="casual">Casual</button>
+          <button type="button" class="tips-filter-btn" data-filter="internship">Internship</button>
+        </div>
+        <div class="tips-grid" data-tips-grid>
+          <article class="tip-card reveal" data-category="casual">
             <p class="tip-meta">Christmas Casual・求職經驗分享</p>
             <h2>JB Hi-Fi 求職經驗分享</h2>
 
@@ -54,6 +61,24 @@
               <li>約一週後收到 offer</li>
             </ol>
             <p class="tip-note">歡迎參加 ACF 大家庭並加入會員，<a href="newsletter.html">訂閱電子報</a>！</p>
+          </article>
+
+          <article class="tip-card tip-card-placeholder reveal" data-category="fulltime">
+            <p class="tip-meta">Full-time</p>
+            <h2>敬請期待</h2>
+            <p>這裡準備收錄全職求職經驗分享，敬請期待！</p>
+          </article>
+
+          <article class="tip-card tip-card-placeholder reveal" data-category="parttime">
+            <p class="tip-meta">Part-time</p>
+            <h2>敬請期待</h2>
+            <p>這裡準備收錄兼職求職經驗分享，敬請期待！</p>
+          </article>
+
+          <article class="tip-card tip-card-placeholder reveal" data-category="internship">
+            <p class="tip-meta">Internship</p>
+            <h2>敬請期待</h2>
+            <p>這裡準備收錄實習求職經驗分享，敬請期待！</p>
           </article>
         </div>
       </section>

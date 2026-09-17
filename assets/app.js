@@ -112,3 +112,24 @@ if (galleryDialog && galleryPreview && galleryClose) {
     }
   });
 }
+
+// Filter job-tips cards by work type (求職攻略頁面).
+const tipsFilter = document.querySelector("[data-tips-filter]");
+const tipsGrid = document.querySelector("[data-tips-grid]");
+
+if (tipsFilter && tipsGrid) {
+  const filterButtons = tipsFilter.querySelectorAll("[data-filter]");
+  const tipCards = tipsGrid.querySelectorAll("[data-category]");
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+
+      const filter = button.dataset.filter;
+      tipCards.forEach((card) => {
+        card.hidden = filter !== "all" && card.dataset.category !== filter;
+      });
+    });
+  });
+}

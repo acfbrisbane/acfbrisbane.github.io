@@ -333,6 +333,10 @@ button, input { font: inherit; }
 .org-chart-card > .round-arrow { position: absolute; right: 1.25rem; bottom: 1.25rem; }
 
 .tips-section { background: var(--white); }
+.tips-filter { display: flex; flex-wrap: wrap; gap: 0.6rem; max-width: 52rem; margin-bottom: 2.5rem; }
+.tips-filter-btn { padding: 0.55rem 1.15rem; color: var(--navy); background: var(--cream); border: 0; border-radius: 99rem; font-family: inherit; font-weight: 700; font-size: 0.86rem; cursor: pointer; transition: background 160ms ease, color 160ms ease; }
+.tips-filter-btn:hover { background: #f0e4cd; }
+.tips-filter-btn.active { color: white; background: var(--coral); }
 .tips-grid { display: grid; gap: 1.5rem; }
 .tip-card { position: relative; max-width: 52rem; padding: clamp(1.6rem, 3vw, 2.5rem); background: white; border: 1px solid var(--line); border-top: 6px solid var(--coral); border-radius: 0.55rem; }
 .tip-meta { margin: 0; color: rgba(12, 26, 44, 0.5); font-family: "Space Grotesk", sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -342,6 +346,9 @@ button, input { font: inherit; }
 .tip-card .responsibility-list { margin-top: 1rem; }
 .tip-note { margin: 2rem 0 0; padding-top: 1.2rem; border-top: 1px solid var(--line); color: var(--coral); font-weight: 700; }
 .tip-note a { border-bottom: 1px solid var(--coral); }
+.tip-card-placeholder { min-height: 12rem; border-top-color: var(--line); border-style: dashed; }
+.tip-card-placeholder h2 { color: rgba(12,26,44,0.35); }
+.tip-card-placeholder > p:not(.tip-meta) { color: rgba(12,26,44,0.45); }
 
 .photos-section { background: var(--cream); }
 .photo-story { position: relative; min-height: 38rem; overflow: hidden; border-radius: 0.65rem; }
