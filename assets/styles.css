@@ -332,6 +332,17 @@ button, input { font: inherit; }
 .org-chart-card:hover img { transform: scale(1.015); }
 .org-chart-card > .round-arrow { position: absolute; right: 1.25rem; bottom: 1.25rem; }
 
+.tips-section { background: var(--white); }
+.tips-grid { display: grid; gap: 1.5rem; }
+.tip-card { position: relative; max-width: 52rem; padding: clamp(1.6rem, 3vw, 2.5rem); background: white; border: 1px solid var(--line); border-top: 6px solid var(--coral); border-radius: 0.55rem; }
+.tip-meta { margin: 0; color: rgba(12, 26, 44, 0.5); font-family: "Space Grotesk", sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.tip-card h2 { margin: 0.7rem 0 0; font-family: "Noto Sans TC", sans-serif; font-size: 2rem; line-height: 1.1; }
+.tip-card h3 { margin: 2.2rem 0 0.7rem; font-family: "Noto Sans TC", sans-serif; font-size: 1.3rem; line-height: 1.35; color: var(--navy); }
+.tip-card > p:not(.tip-meta):not(.tip-note) { margin: 0.6rem 0; color: rgba(12,26,44,0.72); line-height: 1.75; }
+.tip-card .responsibility-list { margin-top: 1rem; }
+.tip-note { margin: 2rem 0 0; padding-top: 1.2rem; border-top: 1px solid var(--line); color: var(--coral); font-weight: 700; }
+.tip-note a { border-bottom: 1px solid var(--coral); }
+
 .photos-section { background: var(--cream); }
 .photo-story { position: relative; min-height: 38rem; overflow: hidden; border-radius: 0.65rem; }
 .photo-story::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,31,58,0.9), rgba(11,31,58,0.05) 70%); }
