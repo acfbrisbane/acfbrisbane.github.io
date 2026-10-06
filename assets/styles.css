@@ -291,6 +291,8 @@ button, input { font: inherit; }
 .person-card:nth-child(4) { border-top-color: #3c8c4a; }
 .person-card:nth-child(5) { border-top-color: #6545a2; }
 .person-card:nth-child(6) { border-top-color: #2685d8; }
+.person-card:nth-child(7) { border-top-color: #0fa3a3; }
+.person-card:nth-child(8) { border-top-color: #d6336c; }
 .person-card > p { margin: 0; color: rgba(12, 26, 44, 0.5); font-family: "Space Grotesk", sans-serif; font-size: 0.75rem; }
 .person-card h3, .person-card h2 { margin: 1.5rem 0 0.15rem; font-family: "Noto Sans TC", sans-serif; font-size: 2rem; line-height: 1.1; }
 .person-card > span { color: rgba(12, 26, 44, 0.62); font-size: 0.88rem; }
