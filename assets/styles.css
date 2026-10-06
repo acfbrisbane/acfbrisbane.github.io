@@ -285,14 +285,16 @@ button, input { font: inherit; }
 .team-lead div > span { color: rgba(255,255,255,0.7); }
 .lead-label { position: relative; z-index: 2; color: var(--yellow); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; }
 .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-.person-card { position: relative; min-height: 22rem; padding: clamp(1.4rem, 2.5vw, 2rem); background: white; border: 1px solid var(--line); border-top: 6px solid var(--coral); border-radius: 0.55rem; }
-.person-card:nth-child(2) { border-top-color: var(--yellow); }
-.person-card:nth-child(3) { border-top-color: #ff8b35; }
-.person-card:nth-child(4) { border-top-color: #3c8c4a; }
-.person-card:nth-child(5) { border-top-color: #6545a2; }
-.person-card:nth-child(6) { border-top-color: #2685d8; }
-.person-card:nth-child(7) { border-top-color: #0fa3a3; }
-.person-card:nth-child(8) { border-top-color: #d6336c; }
+.person-card { --accent: #ff6c52; position: relative; min-height: 22rem; padding: clamp(1.4rem, 2.5vw, 2rem); background: white; border: 1px solid var(--line); border-top: 6px solid var(--accent); border-radius: 0.55rem; }
+.person-card:nth-child(1) { --accent: #ff6c52; }
+.person-card:nth-child(2) { --accent: #ffd34e; }
+.person-card:nth-child(3) { --accent: #14a8a8; }
+.person-card:nth-child(4) { --accent: #3c8c4a; }
+.person-card:nth-child(5) { --accent: #6545a2; }
+.person-card:nth-child(6) { --accent: #2685d8; }
+.person-card:nth-child(7) { --accent: #d6336c; }
+.person-card:nth-child(8) { --accent: #a0673a; }
+.person-card .responsibility-list li::marker { color: var(--accent); }
 .person-card > p { margin: 0; color: rgba(12, 26, 44, 0.5); font-family: "Space Grotesk", sans-serif; font-size: 0.75rem; }
 .person-card h3, .person-card h2 { margin: 1.5rem 0 0.15rem; font-family: "Noto Sans TC", sans-serif; font-size: 2rem; line-height: 1.1; }
 .person-card > span { color: rgba(12, 26, 44, 0.62); font-size: 0.88rem; }
