@@ -348,6 +348,8 @@ button, input { font: inherit; }
 .tip-card h3 { margin: 2.2rem 0 0.7rem; font-family: "Noto Sans TC", sans-serif; font-size: 1.3rem; line-height: 1.35; color: var(--navy); }
 .tip-card > p:not(.tip-meta):not(.tip-note) { margin: 0.6rem 0; color: rgba(12,26,44,0.72); line-height: 1.75; }
 .tip-card .responsibility-list { margin-top: 1rem; }
+.tip-disclaimer { margin: 1.4rem 0 0; padding: 0.9rem 1.1rem; color: rgba(12,26,44,0.72); background: var(--cream); border-left: 4px solid var(--coral); border-radius: 0.35rem; font-size: 0.92rem; line-height: 1.7; }
+.tip-disclaimer b { display: block; margin-bottom: 0.2rem; color: var(--navy); }
 .tip-note { margin: 2rem 0 0; padding-top: 1.2rem; border-top: 1px solid var(--line); color: var(--coral); font-weight: 700; }
 .tip-note a { border-bottom: 1px solid var(--coral); }
 .tip-card-placeholder { min-height: 12rem; border-top-color: var(--line); border-style: dashed; }
