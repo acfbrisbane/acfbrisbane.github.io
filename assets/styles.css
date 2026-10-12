@@ -349,9 +349,24 @@ button, input { font: inherit; }
 .tip-card > p:not(.tip-meta):not(.tip-note) { margin: 0.6rem 0; color: rgba(12,26,44,0.72); line-height: 1.75; }
 .tip-card .responsibility-list { margin-top: 1rem; }
 .tip-disclaimer { margin: 1.4rem 0 0; padding: 0.9rem 1.1rem; color: rgba(12,26,44,0.72); background: var(--cream); border-left: 4px solid var(--coral); border-radius: 0.35rem; font-size: 0.92rem; line-height: 1.7; }
+.tip-byline { margin: 0.8rem 0 0 !important; color: rgba(12,26,44,0.55) !important; font-size: 0.9rem; }
+.tip-small { font-size: 0.85rem; color: rgba(12,26,44,0.5) !important; }
+.tip-card a:not(.button) { color: var(--coral); border-bottom: 1px solid currentColor; }
+.tip-table-wrap { margin: 1rem 0; overflow-x: auto; }
+.tip-table { width: 100%; min-width: 34rem; border-collapse: collapse; font-size: 0.92rem; line-height: 1.6; }
+.tip-table th, .tip-table td { padding: 0.75rem 0.85rem; text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); }
+.tip-table thead th { color: white; background: var(--navy); font-weight: 700; }
+.tip-table tbody th { width: 7rem; color: var(--navy); background: var(--cream); font-weight: 700; }
+.tip-table td { color: rgba(12,26,44,0.75); }
 .tip-disclaimer b { display: block; margin-bottom: 0.2rem; color: var(--navy); }
 .tip-note { margin: 2rem 0 0; padding-top: 1.2rem; border-top: 1px solid var(--line); color: var(--coral); font-weight: 700; }
 .tip-note a { border-bottom: 1px solid var(--coral); }
+.tip-toggle { display: none; margin: 1.6rem auto 0; padding: 0.6rem 1.4rem; color: white; background: var(--navy); border: 0; border-radius: 99rem; font-family: inherit; font-size: 0.88rem; font-weight: 700; cursor: pointer; }
+.tip-toggle:hover { background: var(--coral); }
+.is-collapsed-view .tip-toggle { display: block; }
+.is-collapsed-view .tip-card:not(.tip-card-placeholder):not(.is-open) { max-height: 21rem; overflow: hidden; }
+.is-collapsed-view .tip-card:not(.tip-card-placeholder):not(.is-open)::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 9rem; background: linear-gradient(rgba(255,255,255,0), white 72%); pointer-events: none; }
+.is-collapsed-view .tip-card:not(.tip-card-placeholder):not(.is-open) .tip-toggle { position: absolute; left: 50%; bottom: 1.3rem; z-index: 1; margin: 0; transform: translateX(-50%); }
 .tip-card-placeholder { min-height: 12rem; border-top-color: var(--line); border-style: dashed; }
 .tip-card-placeholder h2 { color: rgba(12,26,44,0.35); }
 .tip-card-placeholder > p:not(.tip-meta) { color: rgba(12,26,44,0.45); }

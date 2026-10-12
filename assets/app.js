@@ -121,6 +121,34 @@ if (tipsFilter && tipsGrid) {
   const filterButtons = tipsFilter.querySelectorAll("[data-filter]");
   const tipCards = tipsGrid.querySelectorAll("[data-category]");
 
+  // In the 「全部」 view, long articles start collapsed with a 閱讀全文 toggle.
+  const articleCards = Array.from(tipCards).filter((card) => !card.classList.contains("tip-card-placeholder"));
+  articleCards.forEach((card) => {
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "tip-toggle";
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.textContent = "閱讀全文 ↓";
+    toggle.addEventListener("click", () => {
+      const open = card.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.textContent = open ? "收合 ↑" : "閱讀全文 ↓";
+      if (!open) card.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    card.appendChild(toggle);
+  });
+
+  const setCollapsed = (collapsed) => {
+    tipsGrid.classList.toggle("is-collapsed-view", collapsed);
+    articleCards.forEach((card) => {
+      card.classList.remove("is-open");
+      const toggle = card.querySelector(".tip-toggle");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.textContent = "閱讀全文 ↓";
+    });
+  };
+  setCollapsed(tipsFilter.querySelector(".active")?.dataset.filter === "all");
+
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
       filterButtons.forEach((btn) => btn.classList.remove("active"));
@@ -130,6 +158,7 @@ if (tipsFilter && tipsGrid) {
       tipCards.forEach((card) => {
         card.hidden = filter !== "all" && card.dataset.category !== filter;
       });
+      setCollapsed(filter === "all");
     });
   });
 }
